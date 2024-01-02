@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  background-color: #040711;
+  background-image: url(assets/img/hero_img.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#translate-request,
+#translate-response {
+  border: 1px solid #4d5562;
+  border-radius: 25px;
+  padding: 25px 40px;
+  box-sizing: border-box;
+  height: 400px;
+  width: 40vw;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#translate-request {
+  background-color: #212936cc;
+}
+#translate-response {
+  background-color: #121826cc;
+}
+
+.languages {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #4d5562;
+  padding-bottom: 20px;
+
+  display: flex;
+  gap: 20px;
+}
+
+.languages button {
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 12px;
+
+  background-color: transparent;
+
+  color: #4d5562;
+  font-size: 1rem;
+}
+
+.languages .active-lang-button {
+  background-color: #4d5562;
+
+  color: #fff;
+
+  transition: 500ms;
+}
+
+#translate-request .msg-input {
+  height: 100%;
+  position: relative;
+}
+
+#translate-request textarea,
+#translate-response textarea {
+  border: 0;
+  outline: 0;
+  height: 100%;
+  width: 100%;
+
+  resize: none;
+  overflow-y: hidden;
+
+  color: #fff;
+  font-size: 1rem;
+  background-color: transparent;
+  word-wrap: break-word;
+}
+
+#translate-request .counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  color: #4d5562;
+  font-size: 0.75rem;
+}
+
+#translate-request .buttons,
+#translate-reponse .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.buttons-left {
+  display: flex;
+  gap: 10px;
+}
+.buttons-left button {
+  height: 35px;
+  width: 35px;
+
+  background-color: transparent;
+  border: 2px solid #4d5562;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.translate-button {
+  height: 50px;
+  width: 150px;
+
+  border: 1px solid #fff;
+  border-radius: 12px;
+
+  font-size: 1rem;
+  color: #fff;
+  background-color: #3662e3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 500ms;
+}
+
+.translate-button:hover {
+  background-color: #7ca9f3;
+  transition: 300ms;
+}

@@ -1,0 +1,48 @@
+<section id="translate-request">
+  <article class="languages">
+    <button>Detect Language</button>
+    <button
+      [ngClass]="requestLangSelected == 'en' ? 'active-lang-button' : ''"
+      (click)="selectReqLang('en')"
+    >
+      English
+    </button>
+    <button
+      [ngClass]="requestLangSelected == 'fr' ? 'active-lang-button' : ''"
+      (click)="selectReqLang('fr')"
+    >
+      French
+    </button>
+    <button
+      [ngClass]="requestLangSelected == 'es' ? 'active-lang-button' : ''"
+      (click)="selectReqLang('es')"
+    >
+      Spanish
+    </button>
+  </article>
+  <article class="msg-input">
+    <textarea
+      [(ngModel)]="message"
+      (keyup)="translate()"
+      name="msg-request"
+      id="msg-request"
+      maxlength="500"
+      spellcheck="false"
+    ></textarea>
+    <p class="counter">{{ message.length }}/500</p>
+  </article>
+  <article class="buttons">
+    <div class="buttons-left">
+      <button>
+        <img src="../../../assets/img/sound_max_fill.svg" alt="Listen text" />
+      </button>
+      <button>
+        <img src="../../../assets/img/Copy.svg" alt="Copy text" />
+      </button>
+    </div>
+    <button class="translate-button" (click)="translate()">
+      <img src="../../../assets/img/Sort_alfa.svg" alt="Translate text" />
+      Translate
+    </button>
+  </article>
+</section>

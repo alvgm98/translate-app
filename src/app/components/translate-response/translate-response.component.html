@@ -1,0 +1,35 @@
+<section id="translate-response">
+  <article class="languages">
+    <button
+      [ngClass]="responseLangSelected == 'en' ? 'active-lang-button' : ''"
+      (click)="selectResLang('en')"
+    >
+      English
+    </button>
+    <button
+      [ngClass]="responseLangSelected == 'fr' ? 'active-lang-button' : ''"
+      (click)="selectResLang('fr')"
+    >
+      French
+    </button>
+    <button
+      [ngClass]="responseLangSelected == 'es' ? 'active-lang-button' : ''"
+      (click)="selectResLang('es')"
+    >
+      Spanish
+    </button>
+  </article>
+  <textarea disabled name="msg-response" id="msg-response" spellcheck="false">{{
+    translatedMessage
+  }}</textarea>
+  <article class="buttons">
+    <div class="buttons-left">
+      <button>
+        <img src="../../../assets/img/sound_max_fill.svg" alt="Listen text" />
+      </button>
+      <button>
+        <img src="../../../assets/img/Copy.svg" alt="Copy text" />
+      </button>
+    </div>
+  </article>
+</section>
