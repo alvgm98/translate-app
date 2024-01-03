@@ -2,6 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ClipboardService } from 'ngx-clipboard';
+import { CopyModalService } from '../copy-modal/copy-modal.service';
 
 @Component({
   selector: 'app-translate-request',
@@ -27,10 +28,11 @@ export class TranslateRequestComponent {
     this.selectRequestLangEvent.emit(this.requestLangSelected);
   }
 
-  constructor(private _clipboarService: ClipboardService) { }
+  constructor(private clipboarService: ClipboardService, private copyModalService: CopyModalService) { }
 
   copytext() {
-    this._clipboarService.copyFromContent(this.message);
+    this.clipboarService.copyFromContent(this.message);
+    this.copyModalService.show();
   }
 
 }

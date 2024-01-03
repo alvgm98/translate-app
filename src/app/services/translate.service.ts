@@ -8,10 +8,10 @@ import { ITranslateResponse } from '../interfaces/translate-response.model';
 })
 export class TranslateService {
 
-  constructor(private _http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   translate(message: string, requestLang: string, responseLang: string): Observable<ITranslateResponse> {
-    return this._http
+    return this.http
       .get<ITranslateResponse>(`https://api.mymemory.translated.net/get?q=${message}&langpair=${requestLang}|${responseLang}`);
   }
 }

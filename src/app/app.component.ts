@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { TranslateRequestComponent } from './components/translate-request/translate-request.component';
 import { TranslateResponseComponent } from './components/translate-response/translate-response.component';
 import { TranslateService } from './services/translate.service';
+import { CopyModalComponent } from './components/copy-modal/copy-modal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, TranslateRequestComponent, TranslateResponseComponent],
+  imports: [CommonModule, TranslateRequestComponent, TranslateResponseComponent, CopyModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
