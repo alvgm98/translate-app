@@ -8,16 +8,16 @@
       English
     </button>
     <button
-      [ngClass]="requestLangSelected == 'fr' ? 'active-lang-button' : ''"
-      (click)="selectReqLang('fr')"
-    >
-      French
-    </button>
-    <button
       [ngClass]="requestLangSelected == 'es' ? 'active-lang-button' : ''"
       (click)="selectReqLang('es')"
     >
       Spanish
+    </button>
+    <button
+      [ngClass]="requestLangSelected == 'fr' ? 'active-lang-button' : ''"
+      (click)="selectReqLang('fr')"
+    >
+      French
     </button>
   </article>
   <article class="msg-input">
@@ -36,7 +36,7 @@
       <button>
         <img src="../../../assets/img/sound_max_fill.svg" alt="Listen text" />
       </button>
-      <button>
+      <button (click)="copytext()">
         <img src="../../../assets/img/Copy.svg" alt="Copy text" />
       </button>
     </div>

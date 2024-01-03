@@ -7,16 +7,16 @@
       English
     </button>
     <button
-      [ngClass]="responseLangSelected == 'fr' ? 'active-lang-button' : ''"
-      (click)="selectResLang('fr')"
-    >
-      French
-    </button>
-    <button
       [ngClass]="responseLangSelected == 'es' ? 'active-lang-button' : ''"
       (click)="selectResLang('es')"
     >
       Spanish
+    </button>
+    <button
+      [ngClass]="responseLangSelected == 'fr' ? 'active-lang-button' : ''"
+      (click)="selectResLang('fr')"
+    >
+      French
     </button>
   </article>
   <textarea disabled name="msg-response" id="msg-response" spellcheck="false">{{
@@ -27,7 +27,7 @@
       <button>
         <img src="../../../assets/img/sound_max_fill.svg" alt="Listen text" />
       </button>
-      <button>
+      <button (click)="copytext()">
         <img src="../../../assets/img/Copy.svg" alt="Copy text" />
       </button>
     </div>

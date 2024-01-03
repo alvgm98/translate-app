@@ -1,4 +1,14 @@
 <main>
-  <app-translate-request (translateEvent)="getMessage($event)" (selectRequestLangEvent)="getReqLangSelected($event)" />
-  <app-translate-response (selectResponseLangEvent)="getResLangSelected($event)" [translatedMessage]="translatedMessage" />
+  <app-translate-request
+    (translateEvent)="getMessage($event)"
+    (selectRequestLangEvent)="getReqLangSelected($event)"
+
+    [requestLangSelected]="requestLangSelected"
+  />
+  <app-translate-response
+    (selectResponseLangEvent)="getResLangSelected($event)"
+
+    [responseLangSelected]="responseLangSelected"
+    [translatedMessage]="translatedMessage"
+  />
 </main>

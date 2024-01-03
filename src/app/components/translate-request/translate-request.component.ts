@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-translate-request',
@@ -10,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './translate-request.component.css'
 })
 export class TranslateRequestComponent {
-  requestLangSelected: string = 'en';
+  @Input() requestLangSelected!: string;
   message: string = '';
 
   // Emitimos el texto a traducir
@@ -24,7 +25,12 @@ export class TranslateRequestComponent {
   selectReqLang(lang: string) {
     this.requestLangSelected = lang;
     this.selectRequestLangEvent.emit(this.requestLangSelected);
-
-    console.log(this.requestLangSelected)
   }
+
+  constructor(private _clipboarService: ClipboardService) { }
+
+  copytext() {
+    this._clipboarService.copyFromContent(this.message);
+  }
+
 }

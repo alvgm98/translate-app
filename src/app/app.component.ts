@@ -27,16 +27,30 @@ export class AppComponent {
 
   // Recibimos el Request Language Seleccionado desde el hijo.
   getReqLangSelected(requestLangSelected: string) {
+    // Evitamos traducir al mismo idioma intercambiando el idioma seleccionado en response y request.
+    if (requestLangSelected == this.responseLangSelected) {
+      this.responseLangSelected = this.requestLangSelected;
+    }
+    // Asignamos el idioma.
     this.requestLangSelected = requestLangSelected;
-    if (this.message.length < 1) {
+
+    // Si no hay texto que traducir evitamos el mensaje de error de la API.
+    if (this.message.length > 0) {
       this.translate();
     }
   }
 
   // Recibimos el Response Language Seleccionado desde el hijo.
   getResLangSelected(responseLangSelected: string) {
+    // Evitamos traducir al mismo idioma intercambiando el idioma seleccionado en response y request.
+    if (responseLangSelected == this.requestLangSelected) {
+      this.requestLangSelected = this.responseLangSelected;
+    }
+    // Asignamos el idioma.
     this.responseLangSelected = responseLangSelected;
-    if (this.message.length < 1) {
+
+    // Si no hay texto que traducir evitamos el mensaje de error de la API.
+    if (this.message.length > 0) {
       this.translate();
     }
   }
@@ -44,7 +58,7 @@ export class AppComponent {
   translatedMessage: string = '';
 
   translate() {
-    console.log(this.message);
+    console.log(this.message, "---", this.requestLangSelected, "|", this.responseLangSelected);
     this._translateService.translate(this.message, this.requestLangSelected, this.responseLangSelected).subscribe(response => {
       console.log(response);
       if (response.responseData != null && response.responseData.translatedText != null && response.responseStatus == 200) {
