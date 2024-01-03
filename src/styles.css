@@ -11,10 +11,10 @@ body {
   gap: 30px;
 
   background-color: #040711;
-  background-image: url(assets/img/hero_img.jpg);
-  background-position: top;
+  background-image: url(assets/img/logo.svg), url(assets/img/hero_img.jpg);
+  background-position: center 300px, top;
   background-repeat: no-repeat;
-  background-size: 100vw;
+  background-size: 150px, 100vw;
 }
 
 button:hover {
