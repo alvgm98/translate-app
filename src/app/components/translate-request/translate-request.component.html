@@ -1,24 +1,26 @@
 <section id="translate-request">
   <article class="languages">
-    <button>Detect Language</button>
-    <button
-      [ngClass]="requestLangSelected == 'en' ? 'active-lang-button' : ''"
-      (click)="selectReqLang('en')"
-    >
-      English
-    </button>
-    <button
-      [ngClass]="requestLangSelected == 'es' ? 'active-lang-button' : ''"
-      (click)="selectReqLang('es')"
-    >
-      Spanish
-    </button>
-    <button
-      [ngClass]="requestLangSelected == 'fr' ? 'active-lang-button' : ''"
-      (click)="selectReqLang('fr')"
-    >
-      French
-    </button>
+    <div class="languages-left">
+      <button>Detect Language</button>
+      <button
+        [ngClass]="requestLangSelected == 'en' ? 'active-lang-button' : ''"
+        (click)="selectReqLang('en')"
+      >
+        English
+      </button>
+      <button
+        [ngClass]="requestLangSelected == 'es' ? 'active-lang-button' : ''"
+        (click)="selectReqLang('es')"
+      >
+        Spanish
+      </button>
+      <button
+        [ngClass]="requestLangSelected == 'fr' ? 'active-lang-button' : ''"
+        (click)="selectReqLang('fr')"
+      >
+        French
+      </button>
+    </div>
   </article>
   <article class="msg-input">
     <textarea

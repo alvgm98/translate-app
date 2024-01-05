@@ -1,23 +1,30 @@
 <section id="translate-response">
   <article class="languages">
-    <button
-      [ngClass]="responseLangSelected == 'en' ? 'active-lang-button' : ''"
-      (click)="selectResLang('en')"
-    >
-      English
-    </button>
-    <button
-      [ngClass]="responseLangSelected == 'es' ? 'active-lang-button' : ''"
-      (click)="selectResLang('es')"
-    >
-      Spanish
-    </button>
-    <button
-      [ngClass]="responseLangSelected == 'fr' ? 'active-lang-button' : ''"
-      (click)="selectResLang('fr')"
-    >
-      French
-    </button>
+    <div class="languages-left">
+      <button
+        [ngClass]="responseLangSelected == 'en' ? 'active-lang-button' : ''"
+        (click)="selectResLang('en')"
+      >
+        English
+      </button>
+      <button
+        [ngClass]="responseLangSelected == 'es' ? 'active-lang-button' : ''"
+        (click)="selectResLang('es')"
+      >
+        Spanish
+      </button>
+      <button
+        [ngClass]="responseLangSelected == 'fr' ? 'active-lang-button' : ''"
+        (click)="selectResLang('fr')"
+      >
+        French
+      </button>
+    </div>
+    <div class="languages-rigth">
+      <button class="swap-button" (click)="swapLang()">
+        <img src="../../../assets/img/Horizontal_top_left_main.svg" alt="">
+      </button>
+    </div>
   </article>
   <textarea disabled name="msg-response" id="msg-response" spellcheck="false">{{
     translatedMessage

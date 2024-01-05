@@ -72,4 +72,10 @@ export class AppComponent {
       }
     })
   }
+
+  swapLang() {
+    let aux = this.requestLangSelected;
+    this.requestLangSelected = this.responseLangSelected;
+    this.responseLangSelected = aux;
+  }
 }

@@ -47,10 +47,11 @@ button:hover {
   padding-bottom: 20px;
 
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 
-.languages button {
+.languages-left button {
   border: 0;
   border-radius: 12px;
   padding: 8px 12px;
@@ -110,7 +111,8 @@ button:hover {
   display: flex;
   gap: 10px;
 }
-.buttons-left button {
+.buttons-left button,
+.swap-button {
   height: 35px;
   width: 35px;
 
@@ -121,6 +123,15 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: 500ms;
+}
+
+.buttons-left button:hover,
+.swap-button:hover {
+  filter: brightness(0) invert(1);
+
+  transition: 300ms;
 }
 
 .translate-button {

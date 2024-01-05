@@ -27,4 +27,9 @@ export class TranslateResponseComponent {
     this.clipboarService.copyFromContent(this.translatedMessage);
     this.copyModalService.show();
   }
+
+  @Output() swapLangEvent = new EventEmitter<void>();
+  swapLang() {
+    this.swapLangEvent.emit();
+  }
 }
