@@ -60,12 +60,20 @@ button:hover {
 
   color: #4d5562;
   font-size: 1rem;
+
+  transition: 500ms;
+}
+
+.languages-left button:hover {
+  color: #cdd5e0;
+
+  transition: 300ms;
 }
 
 .languages .active-lang-button {
   background-color: #4d5562;
 
-  color: #fff;
+  color: #cdd5e0;
 
   transition: 500ms;
 }
@@ -85,7 +93,7 @@ button:hover {
   resize: none;
   overflow-y: hidden;
 
-  color: #fff;
+  color: #cdd5e0;
   font-size: 1rem;
   background-color: transparent;
   word-wrap: break-word;
@@ -138,11 +146,11 @@ button:hover {
   height: 50px;
   width: 150px;
 
-  border: 1px solid #fff;
+  border: 1px solid #cdd5e0;
   border-radius: 12px;
 
   font-size: 1rem;
-  color: #fff;
+  color: #cdd5e0;
   background-color: #3662e3;
 
   display: flex;
