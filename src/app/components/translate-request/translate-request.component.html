@@ -3,22 +3,22 @@
     <div class="languages-left">
       <button>Detect Language</button>
       <button
-        [ngClass]="requestLangSelected == 'en' ? 'active-lang-button' : ''"
-        (click)="selectReqLang('en')"
+        [ngClass]="requestLangSelected == ENGLISH_LANG ? 'active-lang-button' : ''"
+        (click)="selectReqLang(ENGLISH_LANG)"
       >
-        English
+        {{ENGLISH_LANG.name}}
       </button>
       <button
-        [ngClass]="requestLangSelected == 'es' ? 'active-lang-button' : ''"
-        (click)="selectReqLang('es')"
+        [ngClass]="requestLangSelected == SPANISH_LANG ? 'active-lang-button' : ''"
+        (click)="selectReqLang(SPANISH_LANG)"
       >
-        Spanish
+        {{SPANISH_LANG.name}}
       </button>
       <div class="selectable-lang-div">
         <button
           class="selectable-lang"
-          [ngClass]="requestLangSelected == dropdownLangSelected.code ? 'active-lang-button' : ''"
-          (click)="selectReqLang(dropdownLangSelected.code)"
+          [ngClass]="requestLangSelected == dropdownLangSelected ? 'active-lang-button' : ''"
+          (click)="selectReqLang(dropdownLangSelected)"
         >
           {{dropdownLangSelected.name}}
           <img

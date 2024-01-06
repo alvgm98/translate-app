@@ -3,6 +3,15 @@ export interface Lang {
   code: string
 }
 
+export const ENGLISH_LANG: Lang = {
+  name: 'English',
+  code: 'en'
+}
+export const SPANISH_LANG: Lang = {
+  name: 'Spanish',
+  code: 'es'
+}
+
 export const LANGS: Lang[] = [
   { name: 'French', code: 'fr' },
   { name: 'German', code: 'de' },

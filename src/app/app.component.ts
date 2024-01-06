@@ -4,6 +4,7 @@ import { TranslateRequestComponent } from './components/translate-request/transl
 import { TranslateResponseComponent } from './components/translate-response/translate-response.component';
 import { TranslateService } from './services/translate.service';
 import { CopyModalComponent } from './components/copy-modal/copy-modal.component';
+import { ENGLISH_LANG, Lang, SPANISH_LANG } from './data/langs.data';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +18,8 @@ export class AppComponent {
   constructor(private _translateService: TranslateService) { }
 
   message: string = '';
-  requestLangSelected: string = 'en';
-  responseLangSelected: string = 'es';
+  requestLangSelected: Lang = ENGLISH_LANG;
+  responseLangSelected: Lang = SPANISH_LANG;
 
   // Recibimos el texto a traducir desde el hijo.
   getMessage(message: string) {
@@ -27,7 +28,7 @@ export class AppComponent {
   }
 
   // Recibimos el Request Language Seleccionado desde el hijo.
-  getReqLangSelected(requestLangSelected: string) {
+  getReqLangSelected(requestLangSelected: Lang) {
     // Evitamos traducir al mismo idioma intercambiando el idioma seleccionado en response y request.
     if (requestLangSelected == this.responseLangSelected) {
       this.responseLangSelected = this.requestLangSelected;
@@ -42,7 +43,7 @@ export class AppComponent {
   }
 
   // Recibimos el Response Language Seleccionado desde el hijo.
-  getResLangSelected(responseLangSelected: string) {
+  getResLangSelected(responseLangSelected: Lang) {
     // Evitamos traducir al mismo idioma intercambiando el idioma seleccionado en response y request.
     if (responseLangSelected == this.requestLangSelected) {
       this.requestLangSelected = this.responseLangSelected;
@@ -59,8 +60,8 @@ export class AppComponent {
   translatedMessage: string = '';
 
   translate() {
-    console.log(this.message, "---", this.requestLangSelected, "|", this.responseLangSelected);
-    this._translateService.translate(this.message, this.requestLangSelected, this.responseLangSelected).subscribe(response => {
+    console.log(this.message, "---", this.requestLangSelected.code, "|", this.responseLangSelected.code);
+    this._translateService.translate(this.message, this.requestLangSelected.code, this.responseLangSelected.code).subscribe(response => {
       console.log(response);
       if (response.responseData != null && response.responseData.translatedText != null && response.responseStatus == 200) {
         this.translatedMessage = response.responseData.translatedText;

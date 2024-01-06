@@ -1,9 +1,9 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
 import { CopyModalService } from '../copy-modal/copy-modal.service';
 import { LangDropdownComponent } from '../lang-dropdown/lang-dropdown.component';
-import { LANGS, Lang } from '../../data/langs.data';
+import { ENGLISH_LANG, LANGS, Lang, SPANISH_LANG } from '../../data/langs.data';
 
 @Component({
   selector: 'app-translate-response',
@@ -12,13 +12,16 @@ import { LANGS, Lang } from '../../data/langs.data';
   templateUrl: './translate-response.component.html',
   styleUrl: './translate-response.component.css'
 })
-export class TranslateResponseComponent {
+export class TranslateResponseComponent implements OnChanges {
+  ENGLISH_LANG: Lang = ENGLISH_LANG;
+  SPANISH_LANG: Lang = SPANISH_LANG;
+
   @Input() translatedMessage!: string;
-  @Input() responseLangSelected!: string;
+  @Input() responseLangSelected!: Lang;
 
   // Emitimos el lenguaje al que queremos que nos traduzcan el texto.
-  @Output() selectResponseLangEvent = new EventEmitter<string>();
-  selectResLang(lang: string) {
+  @Output() selectResponseLangEvent = new EventEmitter<Lang>();
+  selectResLang(lang: Lang) {
     this.responseLangSelected = lang;
     this.selectResponseLangEvent.emit(this.responseLangSelected);
   }
@@ -30,9 +33,17 @@ export class TranslateResponseComponent {
     this.copyModalService.show();
   }
 
+  /* SWAP LANGS FUNCTIONS */
+
   @Output() swapLangEvent = new EventEmitter<void>();
   swapLang() {
     this.swapLangEvent.emit();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['responseLangSelected']) {
+      this.selectDropdownLangInCaseOfSwap();
+    }
   }
 
   /* DROPDOWN VARIABLES & FUNCTIONS */
@@ -42,8 +53,14 @@ export class TranslateResponseComponent {
 
   selectDropdownLang(lang: Lang) {
     this.dropdownLangSelected = lang;
-    this.selectResLang(this.dropdownLangSelected.code);
+    this.selectResLang(this.dropdownLangSelected);
     this.closeDropdown()
+  }
+
+  selectDropdownLangInCaseOfSwap() {
+    if (this.responseLangSelected != ENGLISH_LANG && this.responseLangSelected != SPANISH_LANG && this.responseLangSelected != this.dropdownLangSelected) {
+      this.selectDropdownLang(this.responseLangSelected);
+    }
   }
 
   openDropdown() {

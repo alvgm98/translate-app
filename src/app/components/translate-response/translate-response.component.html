@@ -2,22 +2,22 @@
   <article class="languages">
     <div class="languages-left">
       <button
-        [ngClass]="responseLangSelected == 'en' ? 'active-lang-button' : ''"
-        (click)="selectResLang('en')"
+        [ngClass]="responseLangSelected == ENGLISH_LANG ? 'active-lang-button' : ''"
+        (click)="selectResLang(ENGLISH_LANG)"
       >
-        English
+        {{ENGLISH_LANG.name}}
       </button>
       <button
-        [ngClass]="responseLangSelected == 'es' ? 'active-lang-button' : ''"
-        (click)="selectResLang('es')"
+        [ngClass]="responseLangSelected == SPANISH_LANG ? 'active-lang-button' : ''"
+        (click)="selectResLang(SPANISH_LANG)"
       >
-        Spanish
+        {{SPANISH_LANG.name}}
       </button>
       <div class="selectable-lang-div">
         <button
           class="selectable-lang"
-          [ngClass]="responseLangSelected == dropdownLangSelected.code ? 'active-lang-button' : ''"
-          (click)="selectResLang(dropdownLangSelected.code)"
+          [ngClass]="responseLangSelected == dropdownLangSelected ? 'active-lang-button' : ''"
+          (click)="selectResLang(dropdownLangSelected)"
         >
           {{ dropdownLangSelected.name }}
           <img
