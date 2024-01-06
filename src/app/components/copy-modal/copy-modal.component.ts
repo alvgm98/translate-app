@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CopyModalService } from './copy-modal.service';
 
 @Component({
-  selector: 'app-copy-modal',
+  selector: 'component-copy-modal',
   standalone: true,
   imports: [],
   templateUrl: './copy-modal.component.html',

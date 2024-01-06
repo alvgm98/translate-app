@@ -1,0 +1,7 @@
+<ul class="dropdown-langs">
+  @for (lang of this.langs; track $index) {
+    @if (lang != dropdownLangSelected) {
+      <li (click)="selectDropdownLang(lang)">{{ lang.name }}</li>
+    }
+  }
+</ul>

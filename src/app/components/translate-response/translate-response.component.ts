@@ -2,11 +2,13 @@ import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
 import { CopyModalService } from '../copy-modal/copy-modal.service';
+import { LangDropdownComponent } from '../lang-dropdown/lang-dropdown.component';
+import { LANGS, Lang } from '../../data/langs.data';
 
 @Component({
   selector: 'app-translate-response',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, LangDropdownComponent],
   templateUrl: './translate-response.component.html',
   styleUrl: './translate-response.component.css'
 })
@@ -31,5 +33,24 @@ export class TranslateResponseComponent {
   @Output() swapLangEvent = new EventEmitter<void>();
   swapLang() {
     this.swapLangEvent.emit();
+  }
+
+  /* DROPDOWN VARIABLES & FUNCTIONS */
+
+  dropdownLangSelected: Lang = LANGS[0];
+  hideDropdown: boolean = true;
+
+  selectDropdownLang(lang: Lang) {
+    this.dropdownLangSelected = lang;
+    this.selectResLang(this.dropdownLangSelected.code);
+    this.closeDropdown()
+  }
+
+  openDropdown() {
+    this.hideDropdown = !this.hideDropdown;
+  }
+
+  closeDropdown() {
+    this.hideDropdown = true;
   }
 }

@@ -48,7 +48,12 @@ button:hover {
 
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+}
+
+.languages .languages-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .languages-left button {
@@ -163,4 +168,17 @@ button:hover {
 .translate-button:hover {
   background-color: #7ca9f3;
   transition: 300ms;
+}
+
+/* ESTILOS PARA EL DROPDOWN */
+
+.selectable-lang-div {
+  position: relative;
+}
+
+.selectable-lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px 8px 12px;
 }

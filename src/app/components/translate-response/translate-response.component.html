@@ -13,16 +13,29 @@
       >
         Spanish
       </button>
-      <button
-        [ngClass]="responseLangSelected == 'fr' ? 'active-lang-button' : ''"
-        (click)="selectResLang('fr')"
-      >
-        French
-      </button>
+      <div class="selectable-lang-div">
+        <button
+          class="selectable-lang"
+          [ngClass]="responseLangSelected == dropdownLangSelected.code ? 'active-lang-button' : ''"
+          (click)="selectResLang(dropdownLangSelected.code)"
+        >
+          {{ dropdownLangSelected.name }}
+          <img
+            (click)="openDropdown()"
+            src="../../../assets/img/Expand_down.svg"
+          />
+        </button>
+        @if (!hideDropdown) {
+        <component-lang-dropdown
+          [dropdownLangSelected]="dropdownLangSelected"
+          (selectDropdownLangEvent)="selectDropdownLang($event)"
+        />
+        }
+      </div>
     </div>
     <div class="languages-rigth">
       <button class="swap-button" (click)="swapLang()">
-        <img src="../../../assets/img/Horizontal_top_left_main.svg" alt="">
+        <img src="../../../assets/img/Horizontal_top_left_main.svg" alt="" />
       </button>
     </div>
   </article>
