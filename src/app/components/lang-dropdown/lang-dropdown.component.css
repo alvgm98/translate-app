@@ -2,13 +2,14 @@
   position: absolute;
   z-index: 1;
   top: 25px;
-  left: 10px;
+  right: 50%;
+  transform: translateX(70%);
 
   border-radius: 12px;
   border: 1px solid #4d5562;
   padding: 20px 30px 10px 30px;
   height: 280px;
-  width: 540px;
+  width: 20vw;
   overflow-x: scroll;
   background-color: #121826;
 
@@ -39,7 +40,7 @@
 .dropdown-langs li {
   list-style-type: none;
 
-  width: 180px;
+  width: 170px;
   text-align: left;
   color: #4d5562;
 
