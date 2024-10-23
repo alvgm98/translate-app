@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/translate-app/",
             "outputPath": "dist/translate-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -88,6 +89,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
