@@ -1,5 +1,6 @@
 * {
   font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -28,7 +29,7 @@ button:hover {
   padding: 25px 40px;
   box-sizing: border-box;
   height: 400px;
-  width: 40vw;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -37,6 +38,7 @@ button:hover {
 #translate-request {
   background-color: #212936cc;
 }
+
 #translate-response {
   background-color: #121826cc;
 }
@@ -124,6 +126,7 @@ button:hover {
   display: flex;
   gap: 10px;
 }
+
 .buttons-left button,
 .swap-button {
   height: 35px;
@@ -138,6 +141,11 @@ button:hover {
   align-items: center;
 
   transition: 500ms;
+}
+
+#mobile-swap-button {
+  display: none;
+  border: 2px solid #4d5562;
 }
 
 .buttons-left button:hover,
@@ -181,4 +189,36 @@ button:hover {
   align-items: center;
   gap: 6px;
   padding: 8px 6px 8px 12px;
+}
+
+@media (width < 800px) {
+  #translate-request,
+  #translate-response {
+    padding: 25px 20px;
+  }
+
+  .languages .languages-left {
+    gap: 8px;
+  }
+}
+
+@media (width < 600px) {
+  .languages .languages-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .languages-rigth {
+    display: none;
+  }
+
+  .translate-button {
+    font-size: .8rem;
+    width: 100px;
+    height: 40px;
+  }
+
+  #mobile-swap-button {
+    display: flex;
+  }
 }
