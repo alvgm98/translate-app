@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg width="45" height="45" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m27.63,13.62c6.83,3.95 6.83,13.81 0,17.76c-6.84,3.94 -15.38,-0.99 -15.38,-8.88c0,-7.89 8.54,-12.82 15.38,-8.88z" id="svg_1" stroke="#F9FAFB" stroke-width="2" style="--darkreader-inline-stroke: #dad8d4;"/>
+  <path d="m13.6,13.8c-0.73,-2.29 0.58,-4.57 2.93,-5.08c2.35,-0.52 4.84,0.92 5.56,3.21l1.96,11.27c0.73,2.29 0.57,3.11 -1.77,3.63c-2.35,0.51 -3.16,-0.67 -3.89,-2.96l-4.79,-10.07z" fill="#F9FAFB" id="svg_2" style="--darkreader-inline-fill: #dad8d4;"/>
+  <path d="m34.32,23.01c2.4,0.7 3.9,3.08 3.35,5.32c-0.54,2.25 -2.92,3.5 -5.32,2.8l-10.68,-4.65c-2.4,-0.7 -3.48,-1.43 -2.94,-3.67c0.54,-2.24 1.22,-2.48 3.61,-1.78l5.99,0.99l5.99,0.99z" fill="#F9FAFB" id="svg_3" style="--darkreader-inline-fill: #dad8d4;"/>
+  <path d="m17.6,34.37c-1.67,1.59 -4.48,1.48 -6.28,-0.24c-1.8,-1.73 -1.91,-4.42 -0.24,-6.01l8.59,-5.47c1.67,-1.59 2.27,-1.49 4.07,0.24c1.8,1.72 0.86,1.21 -0.81,2.8l-5.33,8.68z" fill="#F9FAFB" id="svg_4" style="--darkreader-inline-fill: #dad8d4;"/>
+ </g>
+</svg>
