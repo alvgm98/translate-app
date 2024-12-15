@@ -192,6 +192,12 @@ button:hover {
 }
 
 @media (width < 800px) {
+  body {
+    background-image: url(assets/img/hero_img.jpg);
+    background-position: top;
+    background-size: 100vw;
+  }
+
   #translate-request,
   #translate-response {
     padding: 25px 20px;
